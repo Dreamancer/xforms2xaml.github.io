@@ -1,1 +1,65 @@
-XForms2XAML
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>XForms2XAML wiki</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">XForms2XAML</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Úvod</a></li>
+						<li><a href="#about">Zadanie</a></li>
+						<li><a href="#author">Úlohy</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="container">
+			<div class="content">
+				<section id="intro" class="jumbotron">
+					<h1>XForms2XAML</h1>
+					<p class="lead">Vytajte na stránke projektu, ktorý vznikol v&nbsp;rámci výuky predmetu "PB138 - Moderní značkovací jazyky a&nbsp;jejich aplikace" na Fakulte Informatiky Masarykovej Univerzity v&nbsp;Brne.</p>
+				</section>
+				<section id="about">
+					<h2 class="page-header">Zadanie</h2>
+					<p>Cielom projektu bolo vytvoriť <strong>XSL transformáciu</strong> a&nbsp;jednoduchú aplikáciu v&nbsp;jazyku <strong>Java</strong>, ktorá umožní prevod formulárov popísaných pomocou štandardu <strong>XForms</strong> (verzia 1.0) na desktopové rozhrania popísané pomocou jazyka <strong>XAML</strong>.</p>
+				</section>
+				<section id="tasks">
+					<h2 class="page-header">Úlohy</h2>
+					<ul>
+						<li>naštudovanie dokumentácie XForms a XAML</li>
+						<li>analýza rozdielov a&nbsp;zistenie podmnožiny prvkov, ktoré bude možné previesť medzi štandardami</li>
+						<li>vytvorenie XSL transformácie na základe tejto množiny</li>
+						<li>vytvorenie jednoduchej aplikácie s&nbsp;GUI v&nbsp;Jave, ktorá umožní prevod vstupného XForms dokumentu na dokument vo formáte XAML. Užívateľ bude môcť vybrať vstupný súbor na disku a&nbsp;zvoliť cestu k&nbsp;výstupnému súboru. Aplikácia zvaliduje vstupný súbor (overí, či sa jedná o&nbsp;XForms dokument) a&nbsp;na základe vytvorenej XSL transformácie tento súbor prevedie do formátu XAML.</li>
+					</ul>
+				</section>
+				<section id="authors">
+					<h2 class="page-header">Autori a rozdelenie práce</h2>
+					<ul>
+						<li><a href="https://github.com/marekcepcek">Marek Čepček</a> - oranizácia práce, tvorba dokumentácie, jadro aplikácie (validácia XForms súboru a&nbsp;aplikovanie transformácie)</li>
+						<li><a href="https://github.com/Wanderer186">Lucia Sittová</a> - základ aplikácie a jej GUI</li>
+						<li><a href="https://github.com/r-i-v-a">Riva Nathans</a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (2. časť), vytvorenie testovacích XForms súborov</li>
+						<li><a href="https://github.com/Dreamancer">Jakub Horniak </a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (1. časť)</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</body>
+</html>
