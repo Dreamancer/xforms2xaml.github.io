@@ -26,6 +26,7 @@
 						<li><a href="#about">Zadanie</a></li>
 						<li><a href="#tasks">Úlohy</a></li>
 						<li><a href="#authors">Autori</a></li>
+						<li><a href="#result">Riešenie</a></li>
 						<li><a href="#links">Referencie</a></li>
 					</ul>
 				</div>
@@ -35,7 +36,8 @@
 			<div class="content">
 				<section id="intro" class="jumbotron">
 					<h1>XForms2XAML</h1>
-					<p class="lead">Vitajte na stránke projektu, ktorý vznikol v&nbsp;rámci výuky predmetu "PB138 - Moderní značkovací jazyky a&nbsp;jejich aplikace" na Fakulte Informatiky Masarykovej Univerzity v&nbsp;Brne.</p>
+					<p class="lead">Vitajte na stránke projektu XForms2XAML, ktorý vznikol v&nbsp;rámci výuky predmetu "PB138 - Moderní značkovací jazyky a&nbsp;jejich aplikace" na Fakulte Informatiky Masarykovej Univerzity v&nbsp;Brne.</p>
+					<p class="lead">Výslednú aplikáciu a zdrojové súbory nájdete v <a href="https://github.com/xforms2xaml/java-transformer">balíku projektu</a>.</p>
 				</section>
 				<section id="about">
 					<h2 class="page-header">Zadanie</h2>
@@ -59,11 +61,22 @@
 						<li><a href="https://github.com/Dreamancer">Jakub Horniak </a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (1. časť)</li>
 					</ul>
 				</section>
+				<section id="result">
+					<h2 class="page-header">Riešenie</h2>
+					<h3>XSL Transformácia</h3>
+					<p>@TODO</p>
+					<h3>Aplikácia</h3>
+					<p>Výsledná aplikácia poskytuje užívateľovi 2&nbsp;hlavné funkcionality. Validáciu XML dokumentu na základe XSD schémy a&nbsp;transformáciu vstupného dokumentu pomocou predpripravenej XSL transformácie.
+						Pri imlementácií validácie sme použili balík <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28391/oracle/xml/parser/v2/package-summary.html">oracle.xml.parser.v2</a> pretože vstupné súbory bolo potrebné validovať "čiastočne" (tzv. lax validácia), ktorú štandardné balíky poskytované Javou nepodporujú. 
+						Táto validácia funguje tak, že sú validované len elementy, ktoré sú zadefinované vo vstupnej schéme a&nbsp;ostatné sú validátorom ignorované. Výhodou je že XForms elementy može byť súčasťou iného typu XML dokumentu (napr. HTML), ktorý pre naše potreby validovať nemusíme celý, pretože transformácia zo vstupného súboru transformuje len XForms elementy.</p>
+					<p>S&nbsp;podobným problémom sme sa stretli aj pri implementácií transformácie. Tá využívala funkcie z&nbsp;verzie 2.0, s ktoróu si štandardné balíky taktiež nevedeli poradiť. Tu sme pre zmenu použili <a href="http://saxon.sourceforge.net/">Saxon XSLT processor</a>.</p>
+					<img src="gui.jpg" />
+				</section>
 				<section id="links">
 					<h2 class="page-header">Referencie</h2>
 					<h3>XForms</h3>
 					<ul>
-						<li><a href="https://www.w3.org/TR/xforms/">https://www.w3.org/TR/xforms/</a> - XForms 1.1 Recommendation</li>
+						<li><a href="https://www.w3.org/TR/xforms">https://www.w3.org/TR/xforms</a> - XForms 1.1 Recommendation</li>
 						<li><a href="https://www.w3.org/MarkUp/Forms/2007/XForms-11-Schema.xsd">https://www.w3.org/MarkUp/Forms/2007/XForms-11-Schema.xsd</a> - XForms 1.1 XSD Schema</li>
 						<li><a href="http://www.w3.org/2002/xforms">http://www.w3.org/2002/xforms</a> - XForms 1.1 XSD Namespace</li>
 						<li><a href="https://en.wikibooks.org/wiki/XForms">https://en.wikibooks.org/wiki/XForms</a> - Wikipedia</li>
@@ -80,8 +93,8 @@
 					</ul>
 					<h3>Java</h3>
 					<ul>
-						<li><a href="https://docs.oracle.com/cd/E28280_01/appdev.1111/b28394/adx_j_sproc.htm">https://docs.oracle.com/cd/E28280_01/appdev.1111/b28394/adx_j_sproc.htm/</a> - XML Schema validation</li>
-						<li><a href="http://saxon.sourceforge.net/">http://saxon.sourceforge.net/</a> - XSLT 2.0 support package</li>
+						<li><a href="https://docs.oracle.com/cd/E28280_01/appdev.1111/b28394/adx_j_sproc.htm">https://docs.oracle.com/cd/E28280_01/appdev.1111/b28394/adx_j_sproc.htm</a> - XML Schema validation</li>
+						<li><a href="http://saxon.sourceforge.net">http://saxon.sourceforge.net</a> - XSLT 2.0 support package</li>
 					</ul>
 				</section>
 			</div>
