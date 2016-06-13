@@ -55,10 +55,10 @@
 				<section id="authors">
 					<h2 class="page-header">Autori a rozdelenie práce</h2>
 					<ul>
-						<li><a href="https://github.com/marekcepcek">Marek Čepček</a> - oranizácia práce, tvorba dokumentácie, jadro aplikácie (validácia XForms súboru a&nbsp;aplikovanie transformácie)</li>
-						<li><a href="https://github.com/Wanderer186">Lucia Sittová</a> - základ aplikácie a jej GUI</li>
-						<li><a href="https://github.com/r-i-v-a">Riva Nathans</a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (2. časť), vytvorenie testovacích XForms súborov</li>
-						<li><a href="https://github.com/Dreamancer">Jakub Horniak </a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (1. časť)</li>
+						<li><a href="https://github.com/marekcepcek">Marek Čepček</a> - oranizácia práce, tvorba dokumentácie, jadro aplikácie (validácia XForms súboru a&nbsp;aplikovanie transformácie) (<a href="https://github.com/xforms2xaml/java-transformer/raw/master/reports/marekcepcek.pdf">report</a>)</li>
+						<li><a href="https://github.com/Wanderer186">Lucia Sittová</a> - základ aplikácie a jej GUI (<a href="https://github.com/xforms2xaml/java-transformer/raw/master/reports/luciasittova.pdf">report</a>)</li>
+						<li><a href="https://github.com/r-i-v-a">Riva Nathans</a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (2. časť), vytvorenie testovacích XForms súborov (<a href="https://github.com/xforms2xaml/java-transformer/raw/master/reports/rivanathans.pdf">report</a>)</li>
+						<li><a href="https://github.com/Dreamancer">Jakub Horniak </a> - naštudovanie dokumentácie, vytvorenie XSL transformácie (1. časť) (<a href="https://github.com/xforms2xaml/java-transformer/raw/master/reports/jakubHorniak.pdf">report</a>)</li>
 					</ul>
 				</section>
 				<section id="result">
@@ -76,6 +76,7 @@
 						Pri imlementácií validácie sme použili balík <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28391/oracle/xml/parser/v2/package-summary.html">oracle.xml.parser.v2</a> pretože vstupné súbory bolo potrebné validovať "čiastočne" (tzv. lax validácia), ktorú štandardné balíky poskytované Javou nepodporujú. 
 						Táto validácia funguje tak, že sú validované len elementy, ktoré sú zadefinované vo vstupnej schéme a&nbsp;ostatné sú validátorom ignorované. Výhodou je že XForms elementy može byť súčasťou iného typu XML dokumentu (napr. HTML), ktorý pre naše potreby validovať nemusíme celý, pretože transformácia zo vstupného súboru transformuje len XForms elementy.</p>
 					<p>S&nbsp;podobným problémom sme sa stretli aj pri implementácií transformácie. Tá využívala funkcie z&nbsp;verzie 2.0, s ktoróu si štandardné balíky taktiež nevedeli poradiť. Tu sme pre zmenu použili <a href="http://saxon.sourceforge.net/">Saxon XSLT processor</a>.</p>
+					<p>Spustitelný .jar súbor je možné nájsť <a href="https://github.com/xforms2xaml/java-transformer/raw/master/XForms2XAMLTransformer.jar">tu</a>. Je ale potrebné si ktomu stiahnuť <a href="https://github.com/xforms2xaml/java-transformer/raw/master/xforms.xsd">XForms schému</a>, <a href="https://github.com/xforms2xaml/java-transformer/raw/master/xforms-2-xaml.xsl">XSL Transformáciu</a> a jednotlivé balíky <a href="https://github.com/xforms2xaml/java-transformer/raw/master/lib/saxon9he.jar">saxon</a> + <a href="https://github.com/xforms2xaml/java-transformer/raw/master/lib/xmlparserv2.jar">xml.parser.v2</a> (tie je potrebné pridať do priečinu 'lib')</p>
 					<img src="gui.jpg" />
 				</section>
 				<section id="links">
