@@ -64,9 +64,9 @@
 				<section id="result">
 					<h2 class="page-header">Riešenie</h2>
 					<h3>XSL Transformácia</h3>
-					<p>Transformácia väčšiny XForms elementov bola triviálna. Pri niektorých z nich sme však museli brať ohľad na hodnoty ich atribútov a podľa nich určiť, ako daný element transformovať.
-                        Atribút "appearance" určuje v akej forme sa XForms elementy zobrazia užívateľovi, zatiaľ čo ich funkcionalita zostáva rovnaká. Element select1 sa napríklad dá vďaka tomu zobraziť buď ako skupina prepínačov, spinner, alebo list s povoleným jedným výberom. XAML však takéto menenie vzhľadu elementov nepodporuje a pre každú verziu bolo treba vytvoriť, ak existuje, jej XAML ekvivalent.
-                        Mierne zložitejší problém predstavovala transformácia elementu input. Ten môže na základe typu premennej, ku ktorej je tento element viazaný (jedným z navzájom výlučných atribútov "ref" a "bind"), predstavovať rôzne ovládacie prvky. V tomto prípade sa však mení aj funkcionalita elementu. Opäť bolo treba vytvoriť pre každý prípad relevantný XAML element.
+					<p>Transformácia väčšiny XForms elementov bola triviálna. Pri niektorých z&nbsp;nich sme však museli brať ohľad na hodnoty ich atribútov a&nbsp;podľa nich určiť, ako daný element transformovať.
+                        Atribút "appearance" určuje v&nbsp;akej forme sa XForms elementy zobrazia užívateľovi, zatiaľ čo ich funkcionalita zostáva rovnaká. Element select1 sa napríklad dá vďaka tomu zobraziť buď ako skupina prepínačov, spinner, alebo list s povoleným jedným výberom. XAML však takéto menenie vzhľadu elementov nepodporuje a&nbsp;pre každú verziu bolo treba vytvoriť, ak existuje, jej XAML ekvivalent.
+                        Mierne zložitejší problém predstavovala transformácia elementu input. Ten môže na základe typu premennej, ku ktorej je tento element viazaný (jedným z navzájom výlučných atribútov "ref" a&nbsp;"bind"), predstavovať rôzne ovládacie prvky. V tomto prípade sa však mení aj funkcionalita elementu. Opäť bolo treba vytvoriť pre každý prípad relevantný XAML element.
 					</p>
 					<p>Keďže XForms sa dá použiť zároveň s inými XML jazykmi vrámci jedného dokumentu, meno každého elementu obsahuje aj prefix XForms menného priestoru.
                             Takéto elementy sa ale nedajú jednoducho pomocou XPath výrazov označiť a tak sme ich museli vyberať podľa ich lokálnych mien. Zároveň však museli spadať do menného priestoru XForms. Na ich korektné vyberanie sme použili funkcie local-name() a namespace-uri().
@@ -75,12 +75,15 @@
 					<p>Výsledná aplikácia poskytuje užívateľovi 2&nbsp;hlavné funkcionality. Validáciu XML dokumentu na základe XSD schémy a&nbsp;transformáciu vstupného dokumentu pomocou predpripravenej XSL transformácie.
 						Pri imlementácií validácie sme použili balík <a href="https://docs.oracle.com/cd/B28359_01/appdev.111/b28391/oracle/xml/parser/v2/package-summary.html">oracle.xml.parser.v2</a> pretože vstupné súbory bolo potrebné validovať "čiastočne" (tzv. lax validácia), ktorú štandardné balíky poskytované Javou nepodporujú. 
 						Táto validácia funguje tak, že sú validované len elementy, ktoré sú zadefinované vo vstupnej schéme a&nbsp;ostatné sú validátorom ignorované. Výhodou je že XForms elementy može byť súčasťou iného typu XML dokumentu (napr. HTML), ktorý pre naše potreby validovať nemusíme celý, pretože transformácia zo vstupného súboru transformuje len XForms elementy.</p>
-					<p>S&nbsp;podobným problémom sme sa stretli aj pri implementácií transformácie. Tá využívala funkcie z&nbsp;verzie 2.0, s ktoróu si štandardné balíky taktiež nevedeli poradiť. Tu sme pre zmenu použili <a href="http://saxon.sourceforge.net/">Saxon XSLT processor</a>.</p>
-					<p>Spustitelný .jar súbor je možné nájsť <a href="https://github.com/xforms2xaml/java-transformer/raw/master/XForms2XAMLTransformer.jar">tu</a>. Je ale potrebné si ktomu stiahnuť <a href="https://github.com/xforms2xaml/java-transformer/raw/master/xforms.xsd">XForms schému</a>, <a href="https://github.com/xforms2xaml/java-transformer/raw/master/xforms-2-xaml.xsl">XSL Transformáciu</a> a jednotlivé balíky <a href="https://github.com/xforms2xaml/java-transformer/raw/master/lib/saxon9he.jar">saxon</a> + <a href="https://github.com/xforms2xaml/java-transformer/raw/master/lib/xmlparserv2.jar">xml.parser.v2</a> (tie je potrebné pridať do zložky 'lib')</p>
-					<img src="gui.jpg" />
+					<p>S&nbsp;podobným problémom sme sa stretli aj pri implementácií transformácie. Tá využívala funkcie z&nbsp;verzie 2.0, s&nbsp;ktorou si štandardné balíky taktiež nevedeli poradiť. Tu sme pre zmenu použili <a href="http://saxon.sourceforge.net/">Saxon XSLT processor</a>.</p>
+					<p>Spustitelný .jar súbor je možné nájsť <a href="https://github.com/xforms2xaml/java-transformer/raw/master/XForms2XAMLTransformer.jar">tu</a>. Je ale potrebné si ktomu stiahnuť <a href="https://github.com/xforms2xaml/java-transformer/raw/master/xforms.xsd">XForms schému</a>, <a href="https://github.com/xforms2xaml/java-transformer/raw/master/xforms-2-xaml.xsl">XSL Transformáciu</a> a&nbsp;jednotlivé balíky <a href="https://github.com/xforms2xaml/java-transformer/raw/master/lib/saxon9he.jar">saxon</a> + <a href="https://github.com/xforms2xaml/java-transformer/raw/master/lib/xmlparserv2.jar">xml.parser.v2</a> (tie je potrebné pridať do zložky 'lib').</p>
+					<img src="gui.png" />
 				</section>
 				<section id="links">
 					<h2 class="page-header">Referencie</h2>
+					<ul>
+						<li><a href="prezentacia.pdf">prezentácia</a></li>
+					</ul>
 					<h3>XForms</h3>
 					<ul>
 						<li><a href="https://www.w3.org/TR/xforms">https://www.w3.org/TR/xforms</a> - XForms 1.1 Recommendation</li>
